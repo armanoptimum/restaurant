@@ -1,13 +1,26 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap");
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --font-family: "Red Hat Text", sans-serif;
+
+  /* breakpoints */
+  --mobile: 23.438rem;
+  --desktop: 90rem;
+
+  /* colors */
+  --color-red: #b2321c;
+  --color-green: #1e9d62;
+  --color-rose-50: #fef4f1;
+  --color-rose-100: #f6e7e1;
+  --color-rose-300: #d5bdb3;
+  --color-rose-400: #bca29c;
+  --color-rose-500: #8e6f70;
+  --color-rose-900: #271410;
+
+  /* weights */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 }
 
 html,
@@ -17,14 +30,13 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 * {
+  font-family: var(--font-family);
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -35,8 +47,6 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+li {
+  list-style-type: none;
 }
