@@ -37,7 +37,6 @@ const buttonStyles = {
 };
 
 export const ButtonStyled = styled.button`
-  margin: 10rem; /*    tmp */
   ${({ $style }) => buttonStyles[$style || BUTTON_STYLES.PRIMARY]}
   display: flex;
   align-items: center;
@@ -55,8 +54,8 @@ export const IconWrapper = styled(Image)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
-  border-radius: 50%;
+  border: 0.063rem solid white;
+  border-radius: var(--border-radius-circle);
   min-height: 1rem;
   min-width: 1rem;
   padding: 0.2rem;
