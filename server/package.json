@@ -17,5 +17,10 @@
   "devDependencies": {
     "prettier": "^3.4.2"
   },
-  "type": "module"
+  "type": "module",
+  "gitignore": [
+    "node_modules/",
+    "build/",
+    "logs/"
+  ]
 }
