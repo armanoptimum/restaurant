@@ -27,15 +27,15 @@ const Button = ({ children, style = BUTTON_STYLES.PRIMARY }) => {
   };
 
   const incrementItem = () => {
-    setSelectedItemsCount((prev) => prev + 1)
+    setSelectedItemsCount((prev) => prev + 1);
   };
 
   const decrementItem = () => {
-    setSelectedItemsCount((prev) => prev - 1)
+    setSelectedItemsCount((prev) => prev - 1);
   };
 
   const buttonStyle =
-  selectedItemsCount && style === BUTTON_STYLES.CART
+    selectedItemsCount && style === BUTTON_STYLES.CART
       ? BUTTON_STYLES.CART_ACTIVE
       : style;
 
