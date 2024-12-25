@@ -60,6 +60,7 @@ export const IconWrapper = styled(Image)`
   min-height: 1rem;
   min-width: 1rem;
   padding: 0.2rem;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: #fff;
