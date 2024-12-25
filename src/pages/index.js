@@ -1,3 +1,5 @@
+import Button from "@/components/Button";
+import { BUTTON_STYLES } from "@/components/Button/constants";
 import MainLayout from "@/layouts/main";
 import Head from "next/head";
 

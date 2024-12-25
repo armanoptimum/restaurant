@@ -9,7 +9,10 @@
 
   /* colors */
   --color-red: #b2321c;
+  --color-red-hover: #882c1c;
   --color-green: #1e9d62;
+  --color-rose-00: #fefefe;
+  --color-rose-20: #efeae8;
   --color-rose-50: #fef4f1;
   --color-rose-100: #f6e7e1;
   --color-rose-300: #d5bdb3;
@@ -21,12 +24,25 @@
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+
+
+  /* font sizes */
+  --font-size-extra-small: 0.75rem; 
+  --font-size-small: 0.85rem; 
+  --font-size-mediium: 1rem; 
+  --font-size-large: 1.25rem;
+  --font-size-exrta-large: 1.5rem;
+
+  --border-radius-small: 0.25rem;
+  --border-radius-medium: 0.5rem;
+  --border-radius-large: 1.5rem;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--color-rose-20);
 }
 
 body {
