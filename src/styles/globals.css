@@ -25,14 +25,14 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-
   /* font sizes */
-  --font-size-extra-small: 0.75rem; 
-  --font-size-small: 0.85rem; 
-  --font-size-mediium: 1rem; 
+  --font-size-extra-small: 0.75rem;
+  --font-size-small: 0.85rem;
+  --font-size-mediium: 1rem;
   --font-size-large: 1.25rem;
   --font-size-exrta-large: 1.5rem;
 
+  /* border radiuses */
   --border-radius-small: 0.25rem;
   --border-radius-medium: 0.5rem;
   --border-radius-large: 1.5rem;

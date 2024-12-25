@@ -13,6 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <MainLayout>
+        <Button style={BUTTON_STYLES.CART}>Add to Cart</Button>
+        <Button style={BUTTON_STYLES.PRIMARY}>Confirm Order</Button>
       </MainLayout>
     </>
   );

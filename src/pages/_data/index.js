@@ -1,3 +1,3 @@
 export const fetch = () => {
-    return 99;
-}
+  return 99;
+};
