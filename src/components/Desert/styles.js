@@ -12,8 +12,6 @@ export const ImageContainer = styled.div`
   border: ${({ $selected }) => $selected ? "0.2rem solid red" : ''};
   border-radius: var(--border-radius-medium);
   position: relative;
-  overflow: hidden;
-  z-index: 1;
 `;
 
 export const ImageStyled = styled(Image)`
