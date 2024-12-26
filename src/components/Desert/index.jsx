@@ -19,7 +19,7 @@ const Desert = () => {
   return (
     <DesertStyled>
       <ImageContainer>
-        <ImageStyled src={desertDesktopImg} alt="desert" />
+        <ImageStyled priority src={desertDesktopImg} alt="desert" />
         <ButtonContainer>
           <Button style={BUTTON_STYLES.CART}>Add to Cart</Button>
         </ButtonContainer>
