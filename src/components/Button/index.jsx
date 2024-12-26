@@ -8,8 +8,7 @@ import { ButtonStyled, IconWrapper } from "./styles";
 import { BUTTON_STYLES } from "./constants";
 import { useEffect, useState } from "react";
 
-const Button = ({ children, style = BUTTON_STYLES.PRIMARY }) => {
-  const [selectedItemsCount, setSelectedItemsCount] = useState(0);
+const Button = ({ children, style = BUTTON_STYLES.PRIMARY, selectItem, incrementItem, decrementItem, selectedItemsCount }) => {
   const [decrementSrc, setDecrementSrc] = useState(decrementIcon);
   const [incrementSrc, setIncrementSrc] = useState(incrementIcon);
 
@@ -19,20 +18,6 @@ const Button = ({ children, style = BUTTON_STYLES.PRIMARY }) => {
       setIncrementSrc(incrementIcon);
     }
   }, [selectedItemsCount]);
-
-  const selectItem = () => {
-    if (selectedItemsCount === 0) {
-      setSelectedItemsCount(1);
-    }
-  };
-
-  const incrementItem = () => {
-    setSelectedItemsCount((prev) => prev + 1);
-  };
-
-  const decrementItem = () => {
-    setSelectedItemsCount((prev) => prev - 1);
-  };
 
   const buttonStyle =
     selectedItemsCount && style === BUTTON_STYLES.CART

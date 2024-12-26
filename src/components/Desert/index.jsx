@@ -14,11 +14,28 @@ import desertTabletImg from "@/assets/images/image-waffle-tablet.jpg";
 import desertMobileImg from "@/assets/images/image-waffle-mobile.jpg";
 import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
+import { useState } from "react";
 
 const Desert = () => {
+  const [selectedItemsCount, setSelectedItemsCount] = useState(0);
+
+  const selectItem = () => {
+    if (selectedItemsCount === 0) {
+      setSelectedItemsCount(1);
+    }
+  };
+
+  const incrementItem = () => {
+    setSelectedItemsCount((prev) => prev + 1);
+  };
+
+  const decrementItem = () => {
+    setSelectedItemsCount((prev) => prev - 1);
+  };
+
   return (
     <DesertStyled>
-      <ImageContainer>
+      <ImageContainer  $selected={selectedItemsCount}>
         <picture>
           <source
             media={`(min-width: ${BREAKPOINTS.desktop})`}
@@ -31,7 +48,7 @@ const Desert = () => {
           <ImageStyled src={desertMobileImg} alt="desert" priority />
         </picture>
         <ButtonContainer>
-          <Button style={BUTTON_STYLES.CART}>Add to Cart</Button>
+          <Button selectedItemsCount={selectedItemsCount} selectItem={selectItem} incrementItem={incrementItem} decrementItem={decrementItem} style={BUTTON_STYLES.CART}>Add to Cart</Button>
         </ButtonContainer>
       </ImageContainer>
       <DesertInformation>

@@ -9,17 +9,22 @@ export const DesertStyled = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  border: ${({ $selected }) => $selected ? "0.2rem solid red" : ''};
+  border-radius: var(--border-radius-medium);
   position: relative;
+  overflow: hidden;
+  z-index: 1;
 `;
 
 export const ImageStyled = styled(Image)`
   width: 100%;
   height: auto;
-  border-radius: var(--border-radius-medium);
+  
 `;
 
 export const ButtonContainer = styled.div`
   position: absolute;
+  border-radius: var(--border-radius-medium);
   left: 50%;
   transform: translate(-50%, -58%);
 `;
