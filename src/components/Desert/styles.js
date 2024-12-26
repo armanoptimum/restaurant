@@ -9,15 +9,16 @@ export const DesertStyled = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  border: ${({ $selected }) => $selected ? "0.2rem solid red" : ''};
-  border-radius: var(--border-radius-medium);
   position: relative;
 `;
 
 export const ImageStyled = styled(Image)`
+  outline: ${({ $selected }) =>
+    $selected ? "0.17rem solid var(--color-red)" : ""};
+  transition: all 0.2s ease-in-out;
   width: 100%;
   height: auto;
-  
+  border-radius: var(--border-radius-medium);
 `;
 
 export const ButtonContainer = styled.div`

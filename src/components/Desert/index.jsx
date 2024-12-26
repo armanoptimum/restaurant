@@ -35,7 +35,7 @@ const Desert = () => {
 
   return (
     <DesertStyled>
-      <ImageContainer  $selected={selectedItemsCount}>
+      <ImageContainer>
         <picture>
           <source
             media={`(min-width: ${BREAKPOINTS.desktop})`}
@@ -45,10 +45,23 @@ const Desert = () => {
             media={`(min-width: ${BREAKPOINTS.tablet})`}
             srcSet={desertTabletImg.src}
           />
-          <ImageStyled src={desertMobileImg} alt="desert" priority />
+          <ImageStyled
+            src={desertMobileImg}
+            alt="desert"
+            priority
+            $selected={selectedItemsCount}
+          />
         </picture>
         <ButtonContainer>
-          <Button selectedItemsCount={selectedItemsCount} selectItem={selectItem} incrementItem={incrementItem} decrementItem={decrementItem} style={BUTTON_STYLES.CART}>Add to Cart</Button>
+          <Button
+            selectedItemsCount={selectedItemsCount}
+            selectItem={selectItem}
+            incrementItem={incrementItem}
+            decrementItem={decrementItem}
+            style={BUTTON_STYLES.CART}
+          >
+            Add to Cart
+          </Button>
         </ButtonContainer>
       </ImageContainer>
       <DesertInformation>

@@ -8,7 +8,14 @@ import { ButtonStyled, IconWrapper } from "./styles";
 import { BUTTON_STYLES } from "./constants";
 import { useEffect, useState } from "react";
 
-const Button = ({ children, style = BUTTON_STYLES.PRIMARY, selectItem, incrementItem, decrementItem, selectedItemsCount }) => {
+const Button = ({
+  children,
+  style = BUTTON_STYLES.PRIMARY,
+  selectItem,
+  incrementItem,
+  decrementItem,
+  selectedItemsCount,
+}) => {
   const [decrementSrc, setDecrementSrc] = useState(decrementIcon);
   const [incrementSrc, setIncrementSrc] = useState(incrementIcon);
 
