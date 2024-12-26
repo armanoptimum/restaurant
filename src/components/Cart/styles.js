@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from "@/constants";
 import styled from "styled-components";
 
 export const CartStyled = styled.div`
@@ -21,11 +22,17 @@ export const CartMessage = styled.div`
   justify-content: center;
   gap: 0.3rem;
   text-align: center;
-  padding: 1rem;
+  padding: 0.3rem;
   background-color: var(--color-rose-10);
-  font-size: var(--font-size-extra-small);
+  font-size: var(--font-size-extra-extra-small);
   font-weight: var(--font-weight-regular);
   border-radius: var(--border-radius-medium);
+  white-space: nowrap;
+
+  @media (min-width: ${BREAKPOINTS.mobile}) {
+    font-size: var(--font-size-extra-small);
+    padding: 1rem;
+  }
 `;
 
 export const TotalPriceWrapper = styled.div`

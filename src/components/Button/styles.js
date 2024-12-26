@@ -1,15 +1,21 @@
 import styled, { css } from "styled-components";
 import { BUTTON_STYLES } from "./constants";
 import Image from "next/image";
+import { BREAKPOINTS } from "@/constants";
 
 const buttonStyles = {
   [BUTTON_STYLES.PRIMARY]: css`
-    padding: 1rem 7rem;
+    padding: 1rem 5rem;
     color: var(--color-rose-50);
+    justify-content: center;
     border: none;
     background-color: var(--color-red);
     &:hover {
       background-color: var(--color-red-hover);
+    }
+
+    @media (min-width: ${BREAKPOINTS.mobile}) {
+      padding: 1rem 7rem;
     }
   `,
 
