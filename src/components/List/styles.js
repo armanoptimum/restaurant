@@ -17,6 +17,10 @@ export const ListItems = styled.div`
   grid-template-columns: repeat(1, 1fr);
   gap: 2.3rem 1.5rem;
 
+  @media (min-width: ${BREAKPOINTS.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (min-width: ${BREAKPOINTS.desktop}) {
     grid-template-columns: repeat(3, 1fr);
   }

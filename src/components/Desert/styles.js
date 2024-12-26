@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from "@/constants";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -11,10 +12,31 @@ export const ImageContainer = styled.div`
   position: relative;
 `;
 
-export const ImageStyled = styled(Image)`
-  width: 100%;
-  height: auto;
-  border-radius: var(--border-radius-medium);
+export const ImageStyled = styled.div`
+ border-radius: var(--border-radius-medium);
+ background-image: url(${({ $mobile }) => $mobile?.src});
+ background-size: cover;
+ background-position: center;
+
+
+width: ${({ $mobile }) => $mobile?.width ? `${(0.4 * $mobile.width) / 16}rem` : '100%'};
+height: ${({ $mobile }) => $mobile?.height ? `${(0.4 * $mobile.height) / 16}rem` : 'auto'};
+
+@media (min-width: ${BREAKPOINTS.tablet}) {
+    width: ${({ $tablet }) =>
+      $tablet?.width ? `${(0.7 * $tablet.width) / 16}rem` : '100%'};
+    height: ${({ $tablet }) =>
+      $tablet?.height ? `${(0.7 * $tablet.height) / 16}rem` : 'auto'};
+    background-image: url(${({ $tablet }) => $tablet?.src});
+  }
+
+@media (min-width: ${BREAKPOINTS.desktop}) {
+    width: ${({ $desktop }) =>
+      $desktop?.width ? `${(0.5 * $desktop.width) / 16}rem` : '100%'};
+    height: ${({ $desktop }) =>
+      $desktop?.height ? `${(0.5 * $desktop.height) / 16}rem` : 'auto'};
+    background-image: url(${({ $desktop }) => $desktop?.src});
+  }
 `;
 
 export const ButtonContainer = styled.div`
