@@ -40,7 +40,7 @@ export const ButtonStyled = styled.button`
   ${({ $style }) => buttonStyles[$style || BUTTON_STYLES.PRIMARY]}
   display: flex;
   align-items: center;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
   cursor: pointer;

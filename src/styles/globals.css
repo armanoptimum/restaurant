@@ -9,7 +9,7 @@
   --color-red-hover: #882c1c;
   --color-green: #1e9d62;
   --color-rose-00: #fbf8f4;
-  --color-rose-10: #f7f2ef;
+  --color-rose-10:  #FBF8F4;
   --color-rose-20: #efeae8;
   --color-rose-50: #fef4f1;
   --color-rose-100: #f6e7e1;
@@ -19,6 +19,8 @@
   --color-rose-700: #caafa7;
   --color-rose-900: #29130d;
 
+
+
   /* weights */
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
@@ -27,7 +29,7 @@
   /* font sizes */
   --font-size-extra-small: 0.8rem;
   --font-size-small: 0.95rem;
-  --font-size-mediium: 1.25rem;
+  --font-size-medium: 1.25rem;
   --font-size-large: 1.5rem;
   --font-size-exrta-large: 2rem;
   --font-size-huge: 2.5rem;

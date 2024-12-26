@@ -35,7 +35,7 @@ export const TotalPriceWrapper = styled.div`
 `;
 
 export const TotalPrice = styled.h1`
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   color: var(--color-rose-900);
 `;
 
