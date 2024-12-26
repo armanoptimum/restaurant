@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   OrderCancelIconWrapper,
   OrderContent,
@@ -10,8 +9,12 @@ import {
   OrderStyled,
 } from "./styles";
 import removeIcon from "@/assets/icons/icon-remove-item.svg";
+import removeHoverIcon from "@/assets/icons/icon-remove-item-hover.svg";
+import { useState } from "react";
 
 const Order = () => {
+  const [cancelIconSrc, setcancelIconSrc] = useState(removeIcon);
+    
   return (
     <OrderStyled>
       <OrderContent>
@@ -23,7 +26,9 @@ const Order = () => {
         </OrderInfo>
       </OrderContent>
       <OrderCancelIconWrapper
-        src={removeIcon}
+         onMouseOver={() => setcancelIconSrc(removeHoverIcon)}
+         onMouseOut={() => setcancelIconSrc(removeIcon)}
+        src={cancelIconSrc}
         alt="Remove"
         height={17}
         width={17}
