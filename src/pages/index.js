@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import { BUTTON_STYLES } from "@/components/Button/constants";
-import Desert from "@/components/Desert";
+import List from "@/components/List";
 import MainLayout from "@/layouts/main";
 import Head from "next/head";
 
@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <MainLayout>
-        <Desert />
+        <List />
       </MainLayout>
     </>
   );

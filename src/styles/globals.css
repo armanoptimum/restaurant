@@ -7,7 +7,7 @@
   --color-red: #b2321c;
   --color-red-hover: #882c1c;
   --color-green: #1e9d62;
-  --color-rose-00: #fefefe;
+  --color-rose-00: #FBF8F4;
   --color-rose-20: #efeae8;
   --color-rose-50: #fef4f1;
   --color-rose-100: #f6e7e1;
@@ -27,6 +27,7 @@
   --font-size-mediium: 1.25rem;
   --font-size-large: 1.5rem;
   --font-size-exrta-large: 2rem;
+  --font-size-huge: 3rem;
 
   /* border radiuses */
   --border-radius-small: 0.25rem;
@@ -39,7 +40,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: var(--color-rose-20);
+  background-color: var(--color-rose-00);
 }
 
 body {

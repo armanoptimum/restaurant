@@ -8,7 +8,6 @@ export const DesertStyled = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: fit-content;
   position: relative;
 `;
 
