@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const buttonStyles = {
   [BUTTON_STYLES.PRIMARY]: css`
-    padding: 0.8rem 5rem;
+    padding: 1rem 7rem;
     color: var(--color-rose-50);
     border: none;
     background-color: var(--color-red);
@@ -40,6 +40,7 @@ export const ButtonStyled = styled.button`
   ${({ $style }) => buttonStyles[$style || BUTTON_STYLES.PRIMARY]}
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
