@@ -3,18 +3,18 @@ import { ListHeader, ListItems, ListStyled } from "./styles";
 
 const List = () => {
   return (
-  <ListStyled>
-    <ListHeader>Deserts</ListHeader>
-    <ListItems>
-      <Desert />
-      <Desert />
-      <Desert />
-      <Desert />
-      <Desert />
-      <Desert />
-    </ListItems>
-  </ListStyled>  
-  )
+    <ListStyled>
+      <ListHeader>Deserts</ListHeader>
+      <ListItems>
+        <Desert />
+        <Desert />
+        <Desert />
+        <Desert />
+        <Desert />
+        <Desert />
+      </ListItems>
+    </ListStyled>
+  );
 };
 
 export default List;

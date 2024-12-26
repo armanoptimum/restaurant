@@ -8,14 +8,15 @@
   --color-red: #b2321c;
   --color-red-hover: #882c1c;
   --color-green: #1e9d62;
-  --color-rose-00: #FBF8F4;
+  --color-rose-00: #fbf8f4;
+  --color-rose-10: #f7f2ef;
   --color-rose-20: #efeae8;
   --color-rose-50: #fef4f1;
   --color-rose-100: #f6e7e1;
   --color-rose-300: #d5bdb3;
   --color-rose-400: #bca29c;
   --color-rose-500: #8e6f70;
-  --color-rose-900: #271410;
+  --color-rose-900: #29130d;
 
   /* weights */
   --font-weight-regular: 400;
