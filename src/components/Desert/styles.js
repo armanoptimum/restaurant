@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const DesertStyled = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.7rem;
+  gap: 2rem;
 `;
 
 export const ImageContainer = styled.div`

@@ -15,7 +15,7 @@ export const ListHeader = styled.h1`
 export const ListItems = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+  gap: 2.3rem 1.5rem;
 
   @media (min-width: ${BREAKPOINTS.desktop}) {
     grid-template-columns: repeat(3, 1fr);
