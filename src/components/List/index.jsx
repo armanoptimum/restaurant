@@ -4,7 +4,7 @@ import { ListHeader, ListItems, ListStyled } from "./styles";
 const List = () => {
   return (
     <ListStyled>
-      <ListHeader>Deserts</ListHeader>
+      <ListHeader>Desserts</ListHeader>
       <ListItems>
         <Desert />
         <Desert />
