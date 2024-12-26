@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import { BUTTON_STYLES } from "@/components/Button/constants";
+import Desert from "@/components/Desert";
 import MainLayout from "@/layouts/main";
 import Head from "next/head";
 
@@ -13,8 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <MainLayout>
-        <Button style={BUTTON_STYLES.CART}>Add to Cart</Button>
-        <Button style={BUTTON_STYLES.PRIMARY}>Confirm Order</Button>
+        <Desert />
       </MainLayout>
     </>
   );

@@ -3,10 +3,6 @@
 :root {
   --font-family: "Red Hat Text", sans-serif;
 
-  /* breakpoints */
-  --mobile: 23.438rem;
-  --desktop: 90rem;
-
   /* colors */
   --color-red: #b2321c;
   --color-red-hover: #882c1c;
@@ -26,11 +22,11 @@
   --font-weight-bold: 700;
 
   /* font sizes */
-  --font-size-extra-small: 0.75rem;
-  --font-size-small: 0.85rem;
-  --font-size-mediium: 1rem;
-  --font-size-large: 1.25rem;
-  --font-size-exrta-large: 1.5rem;
+  --font-size-extra-small: 0.8rem;
+  --font-size-small: 0.95rem;
+  --font-size-mediium: 1.25rem;
+  --font-size-large: 1.5rem;
+  --font-size-exrta-large: 2rem;
 
   /* border radiuses */
   --border-radius-small: 0.25rem;

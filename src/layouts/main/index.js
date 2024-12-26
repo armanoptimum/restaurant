@@ -1,3 +1,5 @@
+import { MainStyled } from "./styles";
+
 export default function MainLayout({ children }) {
-  return <main>{children}</main>;
+  return <MainStyled>{children}</MainStyled>;
 }
