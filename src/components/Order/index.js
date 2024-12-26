@@ -14,7 +14,7 @@ import { useState } from "react";
 
 const Order = () => {
   const [cancelIconSrc, setcancelIconSrc] = useState(removeIcon);
-    
+
   return (
     <OrderStyled>
       <OrderContent>
@@ -26,8 +26,8 @@ const Order = () => {
         </OrderInfo>
       </OrderContent>
       <OrderCancelIconWrapper
-         onMouseOver={() => setcancelIconSrc(removeHoverIcon)}
-         onMouseOut={() => setcancelIconSrc(removeIcon)}
+        onMouseOver={() => setcancelIconSrc(removeHoverIcon)}
+        onMouseOut={() => setcancelIconSrc(removeIcon)}
         src={cancelIconSrc}
         alt="Remove"
         height={17}

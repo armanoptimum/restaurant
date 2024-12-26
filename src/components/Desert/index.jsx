@@ -15,13 +15,21 @@ import desertMobileImg from "@/assets/images/image-waffle-mobile.jpg";
 import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
 
-console.log(desertDesktopImg, desertTabletImg, desertMobileImg)
-
 const Desert = () => {
   return (
     <DesertStyled>
       <ImageContainer>
-        <ImageStyled $desktop={desertDesktopImg} $tablet={desertTabletImg} $mobile={desertMobileImg}/>
+        <picture>
+          <source
+            media={`(min-width: ${BREAKPOINTS.desktop})`}
+            srcSet={desertDesktopImg.src}
+          />
+          <source
+            media={`(min-width: ${BREAKPOINTS.tablet})`}
+            srcSet={desertTabletImg.src}
+          />
+          <ImageStyled src={desertMobileImg} alt="desert" priority />
+        </picture>
         <ButtonContainer>
           <Button style={BUTTON_STYLES.CART}>Add to Cart</Button>
         </ButtonContainer>
