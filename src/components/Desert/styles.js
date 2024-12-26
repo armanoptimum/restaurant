@@ -25,7 +25,7 @@ export const ButtonContainer = styled.div`
   position: absolute;
   border-radius: var(--border-radius-medium);
   left: 50%;
-  transform: translate(-50%, -58%);
+  transform: translate(-50%, -65%);
 `;
 
 export const DesertInformation = styled.div`
