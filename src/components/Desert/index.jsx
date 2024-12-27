@@ -53,9 +53,10 @@ const Desert = ({ id, name, category, price, image, setOrders }) => {
     setOrders((prevOrders) => {
       return prevOrders.map((order) =>
         order.id === id ? { ...order, count: order.count - 1 } : order,
-      );
-    });
+      ).filter((order) => order.count > 0);
+    })
   };
+
   return (
     <DesertStyled>
       <ImageContainer>
