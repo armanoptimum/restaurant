@@ -1,29 +1,11 @@
 import Cart from "@/components/Cart";
 import List from "@/components/List";
 import MainLayout from "@/layouts/main";
-import { gql } from "@apollo/client";
 import Head from "next/head";
-import client from "@/lib/appoloClient";
+import { fetchDesserts } from "./_data";
 
 export async function getServerSideProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        desserts {
-          name
-          category
-          price
-          image {
-            thumbnail
-            mobile
-            tablet
-            desktop
-          }
-        }
-      }
-    `,
-  });
-
+  const data = await fetchDesserts();
   return {
     props: {
       desserts: data.desserts,

@@ -71,7 +71,7 @@ const Desert = ({ name, category, price, image }) => {
       <DesertInformation>
         <DesertName>{category}</DesertName>
         <DesertFullName>{name}</DesertFullName>
-        <DesertPrice>${price}</DesertPrice>
+        <DesertPrice>${price.toFixed(2)}</DesertPrice>
       </DesertInformation>
     </DesertStyled>
   );
