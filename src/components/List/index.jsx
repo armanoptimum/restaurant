@@ -6,8 +6,8 @@ const List = ({ data }) => {
     <ListStyled>
       <ListHeader>Desserts</ListHeader>
       <ListItems>
-        {data.map((item, id) => (
-          <Desert key={id} {...item} />
+        {data.map((item) => (
+          <Desert key={item.id} {...item} />
         ))}
       </ListItems>
     </ListStyled>

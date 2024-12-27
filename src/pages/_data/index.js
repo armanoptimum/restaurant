@@ -6,6 +6,7 @@ export const fetchDesserts = async () => {
     query: gql`
       {
         desserts {
+          id
           name
           category
           price

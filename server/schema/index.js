@@ -12,6 +12,7 @@ const typeDefs = gql`
   }
 
   type Dessert {
+    id: Int
     image: Image
     name: String
     category: String
