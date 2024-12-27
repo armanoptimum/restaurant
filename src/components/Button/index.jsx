@@ -32,7 +32,10 @@ const Button = ({
       : style;
 
   return (
-    <ButtonStyled $style={buttonStyle} onClick={selectItem}>
+    <ButtonStyled
+      $style={buttonStyle}
+      onClick={!selectedItemsCount ? selectItem : null}
+    >
       {buttonStyle === BUTTON_STYLES.CART && (
         <>
           <Image alt="cart" src={cartIcon} /> {children}

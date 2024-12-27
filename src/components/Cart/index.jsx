@@ -16,7 +16,15 @@ import Image from "next/image";
 import Order from "../Order";
 import emptyIcon from "@/assets/icons/illustration-empty-cart.svg";
 
-const Cart = () => {
+const Cart = ({ data, orders }) => {
+  const totalPrice = orders.reduce((total, order) => {
+    const dessert = data.find((item) => item.id === order.id);
+    if (dessert) {
+      return total + dessert.price * order.count;
+    }
+    return total;
+  }, 0);
+
   return (
     <CartStyled>
       <CartHeader>Your Cart (0)</CartHeader>
@@ -26,7 +34,7 @@ const Cart = () => {
         <Order />
         <TotalPriceWrapper>
           <TotalPriceMessage>Order Total</TotalPriceMessage>
-          <TotalPrice>$46.50</TotalPrice>
+          <TotalPrice>${totalPrice.toFixed(2)}</TotalPrice>
         </TotalPriceWrapper>
         <CartMessage>
           <Image src={neutralIcon} alt="neutral" /> This is a

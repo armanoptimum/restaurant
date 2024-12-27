@@ -13,23 +13,48 @@ import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
 import { useState } from "react";
 
-const Desert = ({ name, category, price, image }) => {
+const Desert = ({ id, name, category, price, image, setOrders }) => {
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
 
   const selectItem = () => {
     if (selectedItemsCount === 0) {
       setSelectedItemsCount(1);
     }
+    setOrders((prevOrders) => {
+      const existingOrder = prevOrders.find((order) => order.id === id);
+      if (existingOrder) {
+        return prevOrders.map((order) =>
+          order.id === id ? { ...order, count: 1 } : order,
+        );
+      } else {
+        return [
+          ...prevOrders,
+          {
+            id,
+            count: 1,
+          },
+        ];
+      }
+    });
   };
 
   const incrementItem = () => {
     setSelectedItemsCount((prev) => prev + 1);
+    setOrders((prevOrders) => {
+      return prevOrders.map((order) =>
+        order.id === id ? { ...order, count: order.count + 1 } : order,
+      );
+    });
   };
 
   const decrementItem = () => {
     setSelectedItemsCount((prev) => prev - 1);
+    setOrders((prevOrders) => {
+      return prevOrders.map((order) =>
+        order.id === id ? { ...order, count: order.count - 1 } : order,
+      );
+    });
   };
-
   return (
     <DesertStyled>
       <ImageContainer>
