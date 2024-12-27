@@ -1,7 +1,7 @@
 import { gql } from "apollo-server-express";
-import fs from "fs"
+import fs from "fs";
 
-const dessertsData = JSON.parse(fs.readFileSync('./db/data.json', 'utf-8'));
+const dessertsData = JSON.parse(fs.readFileSync("./db/data.json", "utf-8"));
 
 const typeDefs = gql`
   type Image {
@@ -25,14 +25,11 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
-    Query: {
-      desserts: () => dessertsData,
-      dessertByName: (_, { name }) => dessertsData.find((dessert) => dessert.name === name),
-    },
-  };
+  Query: {
+    desserts: () => dessertsData,
+    dessertByName: (_, { name }) =>
+      dessertsData.find((dessert) => dessert.name === name),
+  },
+};
 
-
-export {
-    typeDefs,
-    resolvers,
-}
+export { typeDefs, resolvers };

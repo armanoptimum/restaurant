@@ -2,17 +2,13 @@ import Desert from "@/components/Desert";
 import { ListHeader, ListItems, ListStyled } from "./styles";
 
 const List = ({ data }) => {
-  console.log(data)
   return (
     <ListStyled>
       <ListHeader>Desserts</ListHeader>
       <ListItems>
-        <Desert />
-        <Desert />
-        <Desert />
-        <Desert />
-        <Desert />
-        <Desert />
+        {data.map((item, id) => (
+          <Desert key={id} {...item} />
+        ))}
       </ListItems>
     </ListStyled>
   );

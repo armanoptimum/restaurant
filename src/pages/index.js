@@ -5,31 +5,30 @@ import { gql } from "@apollo/client";
 import Head from "next/head";
 import client from "@/lib/appoloClient";
 
-
 export async function getServerSideProps() {
-    const { data } = await client.query({
-      query: gql`
-         {
-          desserts {
-            name
-            category
-            price
-            image {
-              thumbnail
-              mobile
-              tablet
-              desktop
-            }
+  const { data } = await client.query({
+    query: gql`
+      {
+        desserts {
+          name
+          category
+          price
+          image {
+            thumbnail
+            mobile
+            tablet
+            desktop
           }
         }
-      `
-    })
-
-    return {
-      props: {
-        desserts: data.desserts
       }
-    }
+    `,
+  });
+
+  return {
+    props: {
+      desserts: data.desserts,
+    },
+  };
 }
 
 export default function Home({ desserts }) {

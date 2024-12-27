@@ -9,14 +9,11 @@ import {
   ImageContainer,
   ImageStyled,
 } from "./styles";
-import desertDesktopImg from "@/assets/images/image-waffle-desktop.jpg";
-import desertTabletImg from "@/assets/images/image-waffle-tablet.jpg";
-import desertMobileImg from "@/assets/images/image-waffle-mobile.jpg";
 import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
 import { useState } from "react";
 
-const Desert = () => {
+const Desert = ({ name, category, price, image }) => {
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
 
   const selectItem = () => {
@@ -39,16 +36,23 @@ const Desert = () => {
         <picture>
           <source
             media={`(min-width: ${BREAKPOINTS.desktop})`}
-            srcSet={desertDesktopImg.src}
+            srcSet={image.desktop}
           />
           <source
             media={`(min-width: ${BREAKPOINTS.tablet})`}
-            srcSet={desertTabletImg.src}
+            srcSet={image.tablet}
+          />
+          <source
+            media={`(min-width: ${BREAKPOINTS.mobile})`}
+            srcSet={image.mobile}
           />
           <ImageStyled
-            src={desertMobileImg}
+            srcSet={image.mobile}
+            src={image.mobile}
             alt="desert"
             priority
+            width={100}
+            height={100}
             $selected={selectedItemsCount}
           />
         </picture>
@@ -65,9 +69,9 @@ const Desert = () => {
         </ButtonContainer>
       </ImageContainer>
       <DesertInformation>
-        <DesertName>Waffle</DesertName>
-        <DesertFullName>Waffle with Berries</DesertFullName>
-        <DesertPrice>$6.50</DesertPrice>
+        <DesertName>{category}</DesertName>
+        <DesertFullName>{name}</DesertFullName>
+        <DesertPrice>${price}</DesertPrice>
       </DesertInformation>
     </DesertStyled>
   );
