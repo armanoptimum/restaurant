@@ -1,6 +1,5 @@
 import Desert from "@/components/Desert";
 import { ListHeader, ListItems, ListStyled } from "./styles";
-import { useState } from "react";
 
 const List = ({ data, setOrders, selectedItems, setSelectedItems }) => {
   return (
@@ -9,10 +8,10 @@ const List = ({ data, setOrders, selectedItems, setSelectedItems }) => {
       <ListItems>
         {data.map((item) => (
           <Desert
-            selectedItems={selectedItems}
-            setSelectedItems={setSelectedItems}
             key={item.id}
             {...item}
+            selectedItems={selectedItems}
+            setSelectedItems={setSelectedItems}
             setOrders={setOrders}
           />
         ))}

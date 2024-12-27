@@ -1,6 +1,5 @@
-import { BREAKPOINTS } from "@/constants";
-import Image from "next/image";
 import styled from "styled-components";
+import Image from "next/image";
 
 export const DesertStyled = styled.div`
   display: flex;

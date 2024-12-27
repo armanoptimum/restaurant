@@ -11,7 +11,7 @@ import {
 import removeIcon from "@/assets/icons/icon-remove-item.svg";
 import removeHoverIcon from "@/assets/icons/icon-remove-item-hover.svg";
 import { useState } from "react";
-import { priceFormat } from "../../utils";
+import { priceFormat } from "@/utils";
 
 const Order = ({ id, name, price, count, onCancelHandler }) => {
   const [cancelIconSrc, setcancelIconSrc] = useState(removeIcon);

@@ -10,12 +10,12 @@ import {
   TotalPriceWrapper,
   NonEmptyCard,
 } from "./styles";
-import { BUTTON_STYLES } from "../Button/constants";
+import { BUTTON_STYLES } from "@/components/Button/constants";
 import neutralIcon from "@/assets/icons/icon-carbon-neutral.svg";
 import Image from "next/image";
-import Order from "../Order";
+import Order from "@/components/Order";
 import emptyIcon from "@/assets/icons/illustration-empty-cart.svg";
-import { priceFormat } from "../../utils";
+import { priceFormat } from "@/utils";
 
 const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
   let ordersCount = 0;

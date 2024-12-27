@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
-import { priceFormat } from "../../utils";
+import { priceFormat } from "@/utils";
 
 const Desert = ({
   id,

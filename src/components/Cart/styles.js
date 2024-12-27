@@ -1,5 +1,5 @@
-import { BREAKPOINTS } from "@/constants";
 import styled from "styled-components";
+import { BREAKPOINTS } from "@/constants";
 
 export const CartStyled = styled.div`
   display: flex;
