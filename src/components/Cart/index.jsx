@@ -63,7 +63,7 @@ const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
         <Button style={BUTTON_STYLES.PRIMARY}>Confirm Order</Button>
       </NonEmptyCard>
       <EmptyCart $empty={!ordersCount}>
-        <Image src={emptyIcon} alt="empty" />
+        <Image src={emptyIcon} alt="empty" priority />
         <EmptyCardMessage>Your added items will appear here</EmptyCardMessage>
       </EmptyCart>
     </CartStyled>

@@ -28,8 +28,6 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     desserts: () => dessertsData,
-    dessertByName: (_, { name }) =>
-      dessertsData.find((dessert) => dessert.name === name),
   },
 };
 
