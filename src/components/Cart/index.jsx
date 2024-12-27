@@ -22,7 +22,7 @@ const Cart = ({ data, orders }) => {
   const totalPrice = orders.reduce((total, order) => {
     const dessert = data.find((item) => item.id === order.id);
     if (dessert) {
-      ordersCount += order.count * 1;
+      ordersCount += order.count;
       return total + dessert.price * order.count;
     }
     return total;
