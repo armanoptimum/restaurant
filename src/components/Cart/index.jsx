@@ -17,7 +17,7 @@ import Order from "../Order";
 import emptyIcon from "@/assets/icons/illustration-empty-cart.svg";
 import { priceFormat } from "../../utils";
 
-const Cart = ({ data, orders }) => {
+const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
   let ordersCount = 0;
   const totalPrice = orders.reduce((total, order) => {
     const dessert = data.find((item) => item.id === order.id);
@@ -28,14 +28,29 @@ const Cart = ({ data, orders }) => {
     return total;
   }, 0);
 
+  const onCancelHandler = (id) => {
+    const newOrders = orders.filter((order) => order.id != id);
+    setOrders(newOrders);
+    setSelectedItems((prev) => {
+      return prev.filter((item) => item.id != id);
+    });
+  };
   return (
     <CartStyled>
       <CartHeader>Your Cart ({ordersCount})</CartHeader>
-      <NonEmptyCard>
+      <NonEmptyCard $empty={!ordersCount}>
         {orders.map(({ id, count }) =>
           data
             .filter((item) => item.id === id)
-            .map((item) => <Order key={id} {...item} count={count} />),
+            .map((item) => (
+              <Order
+                key={id}
+                id={id}
+                {...item}
+                count={count}
+                onCancelHandler={onCancelHandler}
+              />
+            )),
         )}
         <TotalPriceWrapper>
           <TotalPriceMessage>Order Total</TotalPriceMessage>
@@ -47,7 +62,7 @@ const Cart = ({ data, orders }) => {
         </CartMessage>
         <Button style={BUTTON_STYLES.PRIMARY}>Confirm Order</Button>
       </NonEmptyCard>
-      <EmptyCart>
+      <EmptyCart $empty={!ordersCount}>
         <Image src={emptyIcon} alt="empty" />
         <EmptyCardMessage>Your added items will appear here</EmptyCardMessage>
       </EmptyCart>

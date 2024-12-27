@@ -13,7 +13,7 @@ import removeHoverIcon from "@/assets/icons/icon-remove-item-hover.svg";
 import { useState } from "react";
 import { priceFormat } from "../../utils";
 
-const Order = ({ name, price, count }) => {
+const Order = ({ id, name, price, count, onCancelHandler }) => {
   const [cancelIconSrc, setcancelIconSrc] = useState(removeIcon);
 
   return (
@@ -29,6 +29,7 @@ const Order = ({ name, price, count }) => {
         </OrderInfo>
       </OrderContent>
       <OrderCancelIconWrapper
+        onClick={() => onCancelHandler(id)}
         onMouseOver={() => setcancelIconSrc(removeHoverIcon)}
         onMouseOut={() => setcancelIconSrc(removeIcon)}
         src={cancelIconSrc}

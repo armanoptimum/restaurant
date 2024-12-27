@@ -11,50 +11,56 @@ import {
 } from "./styles";
 import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
-import { useState } from "react";
 import { priceFormat } from "../../utils";
 
-const Desert = ({ id, name, category, price, image, setOrders }) => {
-  const [selectedItemsCount, setSelectedItemsCount] = useState(0);
+const Desert = ({
+  id,
+  name,
+  category,
+  price,
+  image,
+  setOrders,
+  selectedItems,
+  setSelectedItems,
+}) => {
+  const itemCount = selectedItems.find((item) => item.id === id)?.count || 0;
 
   const selectItem = () => {
-    if (selectedItemsCount === 0) {
-      setSelectedItemsCount(1);
+    if (itemCount === 0) {
+      setSelectedItems((prev) => [...prev, { id, count: 1 }]);
+      setOrders((prevOrders) => [...prevOrders, { id, count: 1 }]);
     }
-    setOrders((prevOrders) => {
-      const existingOrder = prevOrders.find((order) => order.id === id);
-      if (existingOrder) {
-        return prevOrders.map((order) =>
-          order.id === id ? { ...order, count: 1 } : order,
-        );
-      } else {
-        return [
-          ...prevOrders,
-          {
-            id,
-            count: 1,
-          },
-        ];
-      }
-    });
   };
 
   const incrementItem = () => {
-    setSelectedItemsCount((prev) => prev + 1);
-    setOrders((prevOrders) => {
-      return prevOrders.map((order) =>
+    setSelectedItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, count: item.count + 1 } : item,
+      ),
+    );
+    setOrders((prevOrders) =>
+      prevOrders.map((order) =>
         order.id === id ? { ...order, count: order.count + 1 } : order,
-      );
-    });
+      ),
+    );
   };
 
   const decrementItem = () => {
-    setSelectedItemsCount((prev) => prev - 1);
-    setOrders((prevOrders) => {
-      return prevOrders.map((order) =>
-        order.id === id ? { ...order, count: order.count - 1 } : order,
-      ).filter((order) => order.count > 0);
-    })
+    if (itemCount > 1) {
+      setSelectedItems((prev) =>
+        prev.map((item) =>
+          item.id === id ? { ...item, count: item.count - 1 } : item,
+        ),
+      );
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order.id === id ? { ...order, count: order.count - 1 } : order,
+        ),
+      );
+    } else {
+      setSelectedItems((prev) => prev.filter((item) => item.id !== id));
+      setOrders((prevOrders) => prevOrders.filter((order) => order.id !== id));
+    }
   };
 
   return (
@@ -80,12 +86,12 @@ const Desert = ({ id, name, category, price, image, setOrders }) => {
             priority
             width={100}
             height={100}
-            $selected={selectedItemsCount}
+            $selected={itemCount}
           />
         </picture>
         <ButtonContainer>
           <Button
-            selectedItemsCount={selectedItemsCount}
+            selectedItemsCount={itemCount}
             selectItem={selectItem}
             incrementItem={incrementItem}
             decrementItem={decrementItem}

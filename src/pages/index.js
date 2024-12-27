@@ -16,6 +16,7 @@ export async function getServerSideProps() {
 
 export default function Home({ desserts }) {
   const [orders, setOrders] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]); // id and count for each desert  -> { id, count }
   return (
     <>
       <Head>
@@ -25,8 +26,18 @@ export default function Home({ desserts }) {
         <link rel="icon" href="favicon.png" />
       </Head>
       <MainLayout>
-        <List data={desserts} setOrders={setOrders} />
-        <Cart data={desserts} orders={orders} />
+        <List
+          data={desserts}
+          setOrders={setOrders}
+          selectedItems={selectedItems}
+          setSelectedItems={setSelectedItems}
+        />
+        <Cart
+          data={desserts}
+          orders={orders}
+          setOrders={setOrders}
+          setSelectedItems={setSelectedItems}
+        />
       </MainLayout>
     </>
   );
