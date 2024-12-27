@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 import client from "@/lib/appoloClient";
 
-export const fetchDesserts = async () => {
+const fetchDesserts = async () => {
   const { data } = await client.query({
     query: gql`
       {
@@ -22,3 +22,5 @@ export const fetchDesserts = async () => {
   });
   return data;
 };
+
+export default fetchDesserts;

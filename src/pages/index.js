@@ -2,7 +2,7 @@ import Cart from "@/components/Cart";
 import List from "@/components/List";
 import MainLayout from "@/layouts/main";
 import Head from "next/head";
-import { fetchDesserts } from "./_data";
+import  fetchDesserts  from "./_data";
 
 export async function getServerSideProps() {
   const data = await fetchDesserts();
