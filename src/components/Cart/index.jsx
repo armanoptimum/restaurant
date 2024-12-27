@@ -15,11 +15,14 @@ import neutralIcon from "@/assets/icons/icon-carbon-neutral.svg";
 import Image from "next/image";
 import Order from "../Order";
 import emptyIcon from "@/assets/icons/illustration-empty-cart.svg";
+import { priceFormat } from "../../utils";
 
 const Cart = ({ data, orders }) => {
+  let ordersCount = 0;
   const totalPrice = orders.reduce((total, order) => {
     const dessert = data.find((item) => item.id === order.id);
     if (dessert) {
+      ordersCount += order.count * 1;
       return total + dessert.price * order.count;
     }
     return total;
@@ -27,14 +30,16 @@ const Cart = ({ data, orders }) => {
 
   return (
     <CartStyled>
-      <CartHeader>Your Cart (0)</CartHeader>
+      <CartHeader>Your Cart ({ordersCount})</CartHeader>
       <NonEmptyCard>
-        <Order />
-        <Order />
-        <Order />
+        {orders.map(({ id, count }) =>
+          data
+            .filter((item) => item.id === id)
+            .map((item) => <Order key={id} {...item} count={count} />),
+        )}
         <TotalPriceWrapper>
           <TotalPriceMessage>Order Total</TotalPriceMessage>
-          <TotalPrice>${totalPrice.toFixed(2)}</TotalPrice>
+          <TotalPrice>${priceFormat(totalPrice)}</TotalPrice>
         </TotalPriceWrapper>
         <CartMessage>
           <Image src={neutralIcon} alt="neutral" /> This is a

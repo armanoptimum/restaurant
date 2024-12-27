@@ -11,18 +11,21 @@ import {
 import removeIcon from "@/assets/icons/icon-remove-item.svg";
 import removeHoverIcon from "@/assets/icons/icon-remove-item-hover.svg";
 import { useState } from "react";
+import { priceFormat } from "../../utils";
 
-const Order = () => {
+const Order = ({ name, price, count }) => {
   const [cancelIconSrc, setcancelIconSrc] = useState(removeIcon);
 
   return (
     <OrderStyled>
       <OrderContent>
-        <OrderName>Vanilla Panna Cotta</OrderName>
+        <OrderName>{name}</OrderName>
         <OrderInfo>
-          <OrderInfoCount>2x</OrderInfoCount>
-          <OrderInfoPrice>@ $6.50</OrderInfoPrice>
-          <OrderInfoTotalPrice>$13.00</OrderInfoTotalPrice>
+          <OrderInfoCount>{count}x</OrderInfoCount>
+          <OrderInfoPrice>@ ${priceFormat(price)}</OrderInfoPrice>
+          <OrderInfoTotalPrice>
+            ${priceFormat(price * count)}
+          </OrderInfoTotalPrice>
         </OrderInfo>
       </OrderContent>
       <OrderCancelIconWrapper

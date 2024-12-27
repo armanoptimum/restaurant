@@ -12,6 +12,7 @@ import {
 import { BUTTON_STYLES } from "@/components/Button/constants";
 import { BREAKPOINTS } from "@/constants";
 import { useState } from "react";
+import { priceFormat } from "../../utils";
 
 const Desert = ({ id, name, category, price, image, setOrders }) => {
   const [selectedItemsCount, setSelectedItemsCount] = useState(0);
@@ -96,7 +97,7 @@ const Desert = ({ id, name, category, price, image, setOrders }) => {
       <DesertInformation>
         <DesertName>{category}</DesertName>
         <DesertFullName>{name}</DesertFullName>
-        <DesertPrice>${price.toFixed(2)}</DesertPrice>
+        <DesertPrice>${priceFormat(price)}</DesertPrice>
       </DesertInformation>
     </DesertStyled>
   );
