@@ -9,7 +9,14 @@ export const CartStyled = styled.div`
   padding: 1.5rem;
   border-radius: var(--border-radius-medium);
   height: fit-content;
+  min-width: 25%;
 `;
+
+export const NonEmptyCard = styled.div`
+  display: ${({ $empty }) => !$empty ? 'flex' : 'none'};
+  flex-direction: column;
+  gap: 1.3rem;
+`
 
 export const CartHeader = styled.h1`
   font-size: var(--font-size-large);
@@ -50,3 +57,18 @@ export const TotalPriceMessage = styled.p`
   font-size: var(--font-size-small);
   color: var(--color-rose-900);
 `;
+
+export const EmptyCart = styled.div`
+display: ${({ $empty }) => $empty ? 'flex' : 'none'};
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+`
+
+export const EmptyCardMessage = styled.h1`
+  color: var(--color-rose-500);
+  font-size: var(--font-size-small);
+`
+

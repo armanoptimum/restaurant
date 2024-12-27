@@ -1,5 +1,4 @@
-import Button from "@/components/Button";
-import { BUTTON_STYLES } from "@/components/Button/constants";
+
 import Cart from "@/components/Cart";
 import List from "@/components/List";
 import MainLayout from "@/layouts/main";
