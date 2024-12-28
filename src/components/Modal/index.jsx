@@ -14,10 +14,10 @@ import {
   TotalPrice,
   TotalPriceMessage,
   TotalPriceWrapper,
-} from "../Cart/styles";
-import { priceFormat } from "../../utils";
-import Order from "../Order";
-import { ORDER_TYPE } from "../Order/constants";
+} from "@/components/Cart/styles";
+import { priceFormat } from "@/utils";
+import Order from "@/components/Order";
+import { ORDER_TYPE } from "@/components/Order/constants";
 import { useEffect } from "react";
 
 const Modal = ({ totalPrice, data, orders }) => {
@@ -32,7 +32,7 @@ const Modal = ({ totalPrice, data, orders }) => {
     <>
       <ModalBackdrop />
       <ModalStyled>
-        <Image alt="confirmed sign" src={confirmedIcon} />
+        <Image alt="confirmed" src={confirmedIcon} />
         <ModalTextWrapper>
           <ModalTitle>Order Confirmed</ModalTitle>
           <ModalMessage>We hope you enjoy your food!</ModalMessage>
