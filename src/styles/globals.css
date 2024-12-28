@@ -39,7 +39,6 @@
   --border-radius-large: 1.5rem;
   --border-radius-circle: 50%;
 
-
   --spacing-main: 2rem;
 }
 
@@ -59,6 +58,10 @@ body {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.modal-open {
+  height: 100vh;
 }
 
 * {

@@ -1,12 +1,21 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../constants";
 
+export const ModalBackdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+`;
+
 export const ModalStyled = styled.div`
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 0);
-  height: 88vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,10 +23,11 @@ export const ModalStyled = styled.div`
   background-color: var(--color-light);
   padding: 2rem;
   border-radius: var(--border-radius-medium);
+  z-index: 1000;
 
   @media (min-width: ${BREAKPOINTS.tablet}) {
-    width: 34rem;
-    transform: translate(-50%, -50%);
+    width: 30rem;
+    transform: translate(-50%, -30%);
     height: auto;
   }
 `;

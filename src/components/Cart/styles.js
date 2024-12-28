@@ -35,7 +35,7 @@ export const CartMessage = styled.div`
   font-weight: var(--font-weight-regular);
   border-radius: var(--border-radius-medium);
   white-space: nowrap;
-  
+
   @media (min-width: ${BREAKPOINTS.mobile}) {
     font-size: var(--font-size-extra-small);
     padding: 1rem;
@@ -72,7 +72,6 @@ export const EmptyCardMessage = styled.h1`
   font-size: var(--font-size-extra-small);
   white-space: nowrap;
 
-  
   @media (min-width: ${BREAKPOINTS.tablet}) {
     font-size: var(--font-size-small);
   }
