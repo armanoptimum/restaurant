@@ -9,6 +9,10 @@ export const CartStyled = styled.div`
   padding: 1.5rem;
   border-radius: var(--border-radius-medium);
   height: fit-content;
+
+  @media (min-width: ${BREAKPOINTS.smallTablet}) {
+    min-width: 21rem;
+  }
 `;
 
 export const NonEmptyCard = styled.div`
