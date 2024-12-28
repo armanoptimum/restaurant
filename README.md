@@ -29,6 +29,42 @@ Users can:
 
 ### Installation  
 
-1. Clone the repository:  
-   ```bash  
-   git clone <repository_url>  
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+### 1. step run server
+Go to the server directory
+
+```bash
+  cd server
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+
+
+### 1. step run client
+Go to the root directory
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
