@@ -29,13 +29,15 @@ Users can:
 
 ### Installation  
 
+## populate .env based on .env.example
+
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone git@github.com:armanoptimum/restaurant.git
 ```
 
-### step 2, run server
+## step 2, run server
 Go to the server directory
 
 ```bash
@@ -55,7 +57,7 @@ Start the server
 ```
 
 
-### step 1, run client
+## step 2, run client
 Go to the root directory
 
 Install dependencies
