@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "@/constants";
-import { ORDER_TYPE } from "../Order/constants";
 
 export const CartStyled = styled.div`
   display: flex;
