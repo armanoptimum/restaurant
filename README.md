@@ -29,14 +29,13 @@ Users can:
 
 ### Installation  
 
-
 Clone the project
 
 ```bash
   git clone https://link-to-project
 ```
 
-### 1. step run server
+### step 2, run server
 Go to the server directory
 
 ```bash
@@ -53,9 +52,10 @@ Start the server
 
 ```bash
   npm run start
+```
 
 
-### 1. step run client
+### step 1, run client
 Go to the root directory
 
 Install dependencies
