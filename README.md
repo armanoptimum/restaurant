@@ -1,40 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Shopping Cart Application with GraphQL Support  
 
-## Getting Started
+This project is a shopping cart application featuring a responsive UI and a GraphQL backend for seamless data management. It provides users with an intuitive shopping experience and the ability to confirm and reset orders.  
 
-First, run the development server:
+## Features  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Users can:  
+- Add items to the cart and remove them.  
+- Increase or decrease the quantity of items in the cart.  
+- View an order confirmation modal after clicking "Confirm Order."  
+- Reset all cart selections by clicking "Start New Order."  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used  
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Frontend  
+- **Next.js**: Framework for server-side rendering and routing.  
+- **React**: Component-based architecture for the user interface.  
+- **Styled-Components**: For styled and maintainable CSS-in-JS.  
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Backend  
+- **GraphQL**: API schema and data queries.  
+- **Apollo Server**: GraphQL server implementation for data handling.  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Project Setup  
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites  
+- Node.js and npm installed.  
+- A package manager such as npm or Yarn.  
 
-## Learn More
+### Installation  
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+1. Clone the repository:  
+   ```bash  
+   git clone <repository_url>  
