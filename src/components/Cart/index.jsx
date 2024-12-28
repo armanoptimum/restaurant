@@ -79,7 +79,14 @@ const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
       </EmptyCart>
 
       {modalActive && (
-        <Modal totalPrice={totalPrice} data={data} orders={orders} />
+        <Modal
+          totalPrice={totalPrice}
+          data={data}
+          orders={orders}
+          setSelectedItems={setSelectedItems}
+          setOrders={setOrders}
+          setModalActive={setModalActive}
+        />
       )}
     </CartStyled>
   );

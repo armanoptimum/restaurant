@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {
+  ModalWrapper,
   ModalBackdrop,
   ModalMessage,
   ModalOrders,
@@ -20,7 +21,14 @@ import Order from "@/components/Order";
 import { ORDER_TYPE } from "@/components/Order/constants";
 import { useEffect } from "react";
 
-const Modal = ({ totalPrice, data, orders }) => {
+const Modal = ({
+  totalPrice,
+  data,
+  orders,
+  setModalActive,
+  setOrders,
+  setSelectedItems,
+}) => {
   useEffect(() => {
     document.body.classList.add("modal-open");
     return () => {
@@ -28,8 +36,14 @@ const Modal = ({ totalPrice, data, orders }) => {
     };
   }, []);
 
+  const modalCloseHandler = () => {
+    setModalActive(false);
+    setOrders([]);
+    setSelectedItems([]);
+  };
+
   return (
-    <>
+    <ModalWrapper>
       <ModalBackdrop />
       <ModalStyled>
         <Image alt="confirmed" src={confirmedIcon} />
@@ -56,9 +70,11 @@ const Modal = ({ totalPrice, data, orders }) => {
             <TotalPrice>${priceFormat(totalPrice)}</TotalPrice>
           </TotalPriceWrapper>
         </ModalOrders>
-        <Button style={BUTTON_STYLES.PRIMARY}>Start New Order</Button>
+        <Button style={BUTTON_STYLES.PRIMARY} onClick={modalCloseHandler}>
+          Start New Order
+        </Button>
       </ModalStyled>
-    </>
+    </ModalWrapper>
   );
 };
 

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../constants";
 
+export const ModalWrapper = styled.div``;
+
 export const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
