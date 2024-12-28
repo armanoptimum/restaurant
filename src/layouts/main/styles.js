@@ -7,7 +7,6 @@ export const MainStyled = styled.div`
   justify-content: space-between;
   padding: var(--spacing-main);
   gap: 2rem;
-
   @media (min-width: ${BREAKPOINTS.tablet}) {
     flex-direction: row;
   }

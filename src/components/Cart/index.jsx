@@ -16,8 +16,16 @@ import Image from "next/image";
 import Order from "@/components/Order";
 import emptyIcon from "@/assets/icons/illustration-empty-cart.svg";
 import { priceFormat } from "@/utils";
+import Modal from "@/components/Modal";
+import { useState } from "react";
 
 const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
+  const [modalActive, setModalActive] = useState(false);
+
+  const onConfirmOrder = () => {
+    setModalActive(true);
+  };
+
   let ordersCount = 0;
   const totalPrice = orders.reduce((total, order) => {
     const dessert = data.find((item) => item.id === order.id);
@@ -35,6 +43,7 @@ const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
       return prev.filter((item) => item.id != id);
     });
   };
+
   return (
     <CartStyled>
       <CartHeader>Your Cart ({ordersCount})</CartHeader>
@@ -60,12 +69,18 @@ const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
           <Image src={neutralIcon} alt="neutral" /> This is a
           <b>carbon-neutral</b> delivery
         </CartMessage>
-        <Button style={BUTTON_STYLES.PRIMARY}>Confirm Order</Button>
+        <Button style={BUTTON_STYLES.PRIMARY} onClick={onConfirmOrder}>
+          Confirm Order
+        </Button>
       </NonEmptyCard>
       <EmptyCart $empty={!ordersCount}>
         <Image src={emptyIcon} alt="empty" priority />
         <EmptyCardMessage>Your added items will appear here</EmptyCardMessage>
       </EmptyCart>
+
+      {modalActive && (
+        <Modal totalPrice={totalPrice} data={data} orders={orders} />
+      )}
     </CartStyled>
   );
 };

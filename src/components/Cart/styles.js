@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "@/constants";
+import { ORDER_TYPE } from "../Order/constants";
 
 export const CartStyled = styled.div`
   display: flex;
@@ -9,7 +10,6 @@ export const CartStyled = styled.div`
   padding: 1.5rem;
   border-radius: var(--border-radius-medium);
   height: fit-content;
-  min-width: 25%;
 `;
 
 export const NonEmptyCard = styled.div`

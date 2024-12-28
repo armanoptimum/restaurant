@@ -4,6 +4,7 @@ import MainLayout from "@/layouts/main";
 import Head from "next/head";
 import fetchDesserts from "@/_data";
 import { useState } from "react";
+import Modal from "../components/Modal";
 
 export async function getServerSideProps() {
   const data = await fetchDesserts();

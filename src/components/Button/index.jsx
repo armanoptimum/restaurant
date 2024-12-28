@@ -15,6 +15,7 @@ const Button = ({
   incrementItem,
   decrementItem,
   selectedItemsCount,
+  ...props
 }) => {
   const [decrementSrc, setDecrementSrc] = useState(decrementIcon);
   const [incrementSrc, setIncrementSrc] = useState(incrementIcon);
@@ -35,6 +36,7 @@ const Button = ({
     <ButtonStyled
       $style={buttonStyle}
       onClick={!selectedItemsCount ? selectItem : null}
+      {...props}
     >
       {buttonStyle === BUTTON_STYLES.CART && (
         <>

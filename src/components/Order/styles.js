@@ -9,6 +9,16 @@ export const OrderStyled = styled.div`
   padding-bottom: 1rem;
 `;
 
+export const OrderDescription = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const ThumbnailWrapper = styled(Image)`
+  border-radius: var(--border-radius-small);
+`;
+
 export const OrderContent = styled.div`
   display: flex;
   flex-direction: column;
