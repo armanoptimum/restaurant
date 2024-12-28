@@ -8,16 +8,16 @@ import {
   ModalTextWrapper,
   ModalTitle,
 } from "./styles";
-import confirmedIcon from "@/assets/icons/icon-order-confirmed.svg";
-import Button from "@/components/Button";
-import { BUTTON_STYLES } from "@/components/Button/constants";
 import {
   TotalPrice,
   TotalPriceMessage,
   TotalPriceWrapper,
 } from "@/components/Cart/styles";
-import { priceFormat } from "@/utils";
+import confirmedIcon from "@/assets/icons/icon-order-confirmed.svg";
+import Button from "@/components/Button";
 import Order from "@/components/Order";
+import { BUTTON_STYLES } from "@/components/Button/constants";
+import { priceFormat } from "@/utils";
 import { ORDER_TYPE } from "@/components/Order/constants";
 import { useEffect } from "react";
 
