@@ -1,7 +1,5 @@
 import { gql } from "apollo-server-express";
-import fs from "fs";
-
-const dessertsData = JSON.parse(fs.readFileSync("./db/data.json", "utf-8"));
+import { readDessertsData, storeOrder } from "../utils/index.js";
 
 const typeDefs = gql`
   type Image {
@@ -19,14 +17,38 @@ const typeDefs = gql`
     price: Float
   }
 
+  type Order {
+    id: Int
+    dessertId: Int
+    count: Int
+    price: Float
+  }
+
+  input OrderInput {
+    dessertId: Int!
+    count: Int!
+    price: Float!
+  }
+
   type Query {
     desserts: [Dessert]
+  }
+
+  type Mutation {
+    addOrder(input: OrderInput!): Order
   }
 `;
 
 const resolvers = {
   Query: {
-    desserts: () => dessertsData,
+    desserts: () => readDessertsData(),
+  },
+
+  Mutation: {
+    addOrder: (_, { input }) => {
+      const order = storeOrder(input);
+      return order;
+    },
   },
 };
 
