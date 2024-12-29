@@ -17,17 +17,25 @@ const typeDefs = gql`
     price: Float
   }
 
-  type Order {
-    id: Int
-    dessertId: Int
-    count: Int
-    price: Float
+  type DessertOrderOutput {
+    id: Int!
+    count: Int!
+    price: Float!
+  }
+
+  input DessertOrderInput {
+    id: Int!
+    count: Int!
+    price: Float!
   }
 
   input OrderInput {
-    dessertId: Int!
-    count: Int!
-    price: Float!
+    desserts: [DessertOrderInput!]!
+  }
+
+  type OrderOutput {
+    id: Int!
+    desserts: [DessertOrderOutput!]!
   }
 
   type Query {
@@ -35,7 +43,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addOrder(input: OrderInput!): Order
+    addOrder(input: OrderInput!): OrderOutput
   }
 `;
 
