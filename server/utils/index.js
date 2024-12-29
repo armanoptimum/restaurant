@@ -7,9 +7,8 @@ export const readDessertsData = () => {
 };
 
 export const storeOrder = (order) => {
-  const orderId =
-    Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000);
-  order.id = orderId;
+  const id = Math.floor(Date.now() / 1000) + Math.floor(Math.random() * 1000);
+  order.id = id;
   const orderPath = "./db/orders.json";
   const orders = JSON.parse(fs.readFileSync(orderPath, "utf-8"));
   orders.push(order);
