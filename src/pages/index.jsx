@@ -21,7 +21,7 @@ export default function Home({ desserts }) {
   return (
     <>
       <Head>
-        <title>Deserts</title>
+        <title>Desserts</title>
         <meta name="description" content="Desert" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="favicon.png" />
