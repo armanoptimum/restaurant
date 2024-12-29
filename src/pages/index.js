@@ -2,7 +2,7 @@ import Cart from "@/components/Cart";
 import List from "@/components/List";
 import MainLayout from "@/layouts/main";
 import Head from "next/head";
-import fetchDesserts from "@/_data";
+import { fetchDesserts, addOrder } from "@/_data";
 import { useState } from "react";
 
 export async function getServerSideProps() {
@@ -38,6 +38,7 @@ export default function Home({ desserts }) {
           orders={orders}
           setOrders={setOrders}
           setSelectedItems={setSelectedItems}
+          addOrder={addOrder}
         />
       </MainLayout>
     </>

@@ -19,11 +19,26 @@ import { priceFormat } from "@/utils";
 import Modal from "@/components/Modal";
 import { useState } from "react";
 
-const Cart = ({ data, orders, setOrders, setSelectedItems }) => {
+const Cart = ({ data, orders, setOrders, setSelectedItems, addOrder }) => {
   const [modalActive, setModalActive] = useState(false);
 
-  const onConfirmOrder = () => {
-    setModalActive(true);
+  const onConfirmOrder = async () => {
+    const input = {
+      desserts: orders.map(({ id, count }) => {
+        const dessert = data.find((item) => item.id === id);
+        return {
+          id: dessert.id,
+          count,
+          price: dessert.price,
+        };
+      }),
+    };
+    try {
+      await addOrder(input);
+      setModalActive(true);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   let ordersCount = 0;
