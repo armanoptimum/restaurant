@@ -21,7 +21,6 @@ const typeDefs = gql`
 
   type Query {
     desserts: [Dessert]
-    dessertByName(name: String!): Dessert
   }
 `;
 
