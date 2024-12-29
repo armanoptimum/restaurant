@@ -16,7 +16,7 @@ export async function getServerSideProps() {
 
 export default function Home({ desserts }) {
   const [orders, setOrders] = useState([]);
-  const [selectedItems, setSelectedItems] = useState([]); // for each desert stored id and count for how many are selected for each type of desert  ->[{ id, count }]
+  const [selectedItems, setSelectedItems] = useState([]); // will be  ->[{ id, count }]
 
   return (
     <>
