@@ -1,4 +1,4 @@
-import client from "@/lib/appoloClient";
+import client from "@/lib/apolloClient";
 import { gql } from "@apollo/client";
 
 export const fetchDesserts = async () => {
