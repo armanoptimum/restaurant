@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BREAKPOINTS } from "../../constants";
+import { BREAKPOINTS } from "@/constants";
 
 export const ModalWrapper = styled.div``;
 
@@ -19,6 +19,7 @@ export const ModalStyled = styled.div`
   bottom: 0;
   transform: translate(-50%, 0);
   max-height: 90%;
+  min-height: 20rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,9 +31,10 @@ export const ModalStyled = styled.div`
 
   @media (min-width: ${BREAKPOINTS.tablet}) {
     width: 30rem;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -50%);
     height: auto;
-    max-height: 35rem;
+    top: 50%;
+    bottom: unset;
   }
 `;
 
