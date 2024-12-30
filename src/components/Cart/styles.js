@@ -11,7 +11,7 @@ export const CartStyled = styled.div`
   height: fit-content;
 
   @media (min-width: ${BREAKPOINTS.smallTablet}) {
-    min-width: 21rem;
+    min-width: 22rem;
   }
 `;
 
