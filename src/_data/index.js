@@ -2,25 +2,29 @@ import client from "@/lib/appoloClient";
 import { gql } from "@apollo/client";
 
 export const fetchDesserts = async () => {
-  const { data } = await client.query({
-    query: gql`
-      {
-        desserts {
-          id
-          name
-          category
-          price
-          image {
-            thumbnail
-            mobile
-            tablet
-            desktop
+  try {
+    const { data } = await client.query({
+      query: gql`
+        {
+          desserts {
+            id
+            name
+            category
+            price
+            image {
+              thumbnail
+              mobile
+              tablet
+              desktop
+            }
           }
         }
-      }
-    `,
-  });
-  return data;
+      `,
+    });
+    return data;
+  } catch (e) {
+    console.error(e);
+  }
 };
 
 export const addOrder = async (input) => {
@@ -45,6 +49,5 @@ export const addOrder = async (input) => {
     return data.addOrder;
   } catch (error) {
     console.error("Error adding order:", error);
-    throw error;
   }
 };

@@ -6,12 +6,16 @@ import { fetchDesserts, addOrder } from "@/_data";
 import { useState } from "react";
 
 export async function getServerSideProps() {
-  const data = await fetchDesserts();
-  return {
-    props: {
-      desserts: data.desserts,
-    },
-  };
+  try {
+    const data = await fetchDesserts();
+    return {
+      props: {
+        desserts: data?.desserts || [],
+      },
+    };
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 export default function Home({ desserts }) {
