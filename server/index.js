@@ -11,7 +11,7 @@ async function boot() {
   await appoloServer.start();
   appoloServer.applyMiddleware({ app });
 
-  const PORT = process.env.PORT;
+  const PORT = process.env.SERVER_PORT;
   app.listen(PORT, () => {
     console.log(
       `Appolo Server running at http://localhost:${PORT}${appoloServer.graphqlPath}`,
